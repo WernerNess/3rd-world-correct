@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import pdLogo from '../assets/pd-logo.png';
@@ -6,6 +6,7 @@ import DepartmentHeader from '../components/DepartmentHeader';
 
 const PDPage = () => {
     const navigate = useNavigate();
+    const [activeTab, setActiveTab] = useState('HOME');
 
     return (
         <>
@@ -13,6 +14,8 @@ const PDPage = () => {
                 logo={pdLogo}
                 departmentName="3rd World Police Department"
                 discordUrl="https://discord.gg/XUGYq9wUtM"
+                activeTab={activeTab}
+                onTabChange={setActiveTab}
             />
             <div className="department-page">
                 {/* Video Background */}
@@ -25,12 +28,23 @@ const PDPage = () => {
                 </div>
 
                 <div className="department-content">
-                    <div className="department-logo-container">
-                        <img src={pdLogo} alt="3rd World PD" className="department-logo" />
-                    </div>
-                    <h2 className="pd-welcome-text">WELCOME TO THE BEST POLICE DEPARTMENT IN FIVEM</h2>
+                    {/* HOME TAB CONTENT */}
+                    {activeTab === 'HOME' && (
+                        <>
+                            <div className="department-logo-container">
+                                <img src={pdLogo} alt="3rd World PD" className="department-logo" />
+                            </div>
+                            <h2 className="pd-welcome-text">WELCOME TO THE BEST POLICE DEPARTMENT IN FIVEM</h2>
+                        </>
+                    )}
 
-                    {/* Add more content sections here as needed */}
+                    {/* PLACEHOLDER FOR OTHER TABS */}
+                    {(activeTab === 'SOP' || activeTab === 'STAFF' || activeTab === 'FLEET') && (
+                        <div className="department-placeholder">
+                            <h2>Coming Soon</h2>
+                            <p>This section is currently under development.</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </>

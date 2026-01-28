@@ -28,7 +28,7 @@ const LiveStatus = () => {
             </div>
           </div>
 
-          <button className="connect-button">
+          <button className="connect-button" onClick={() => window.open('https://cfx.re/join/mavm3a', '_blank')}>
             <Zap size={20} />
             <span>CONNECT TO SERVER</span>
             <ArrowRight size={20} />

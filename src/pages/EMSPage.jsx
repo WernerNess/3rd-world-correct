@@ -10,7 +10,7 @@ import emsBike from '../assets/ems-bike.png';
 import emsSuv from '../assets/ems-suv.png';
 import emsTruck from '../assets/ems-truck.png';
 import emsOffroadTruck from '../assets/ems-offroad-truck.png';
-import emsCharger from '../assets/ems-charger.png';
+
 import emsBuffalo from '../assets/ems-buffalo.png';
 import emsSedan2 from '../assets/ems-sedan-2.png';
 import emsSuv2 from '../assets/ems-suv-2.png';
@@ -29,10 +29,10 @@ const EMSPage = () => {
         { id: 4, name: 'Vapid Scout', image: emsSuv, type: 'SUV' },
         { id: 5, name: 'Vapid Sandstorm D205 SWB', image: emsTruck, type: 'Truck' },
         { id: 6, name: 'Albany Cavalcade XL', image: emsSuv2, type: 'SUV' },
-        { id: 7, name: 'Bravado Buffalo A/C', image: emsCharger, type: 'Sports' },
+
         { id: 8, name: 'Albany Presidente VSTR', image: emsSedan2, type: 'Sedan' },
         { id: 9, name: 'Vapid Caracara', image: emsOffroadTruck, type: 'Off-Road' },
-        { id: 10, name: 'Bravado Buffalo Hellfire', image: emsBuffalo, type: 'Sports' },
+        { id: 10, name: 'Bravado Buffalo A/C', image: emsBuffalo, type: 'Sports' },
         { id: 11, name: 'Invetero Coquette D9 SPI', image: emsCorvette, type: 'Sports' },
         { id: 12, name: 'Invetero Coquette D5 SPI', image: emsSport1, type: 'Sports' },
         { id: 13, name: 'Jester RR', image: emsSport2, type: 'Sports' },

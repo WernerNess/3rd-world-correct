@@ -37,14 +37,14 @@ const Header = () => {
   };
 
   const handleConnectClick = () => {
-    // Placeholder - will be updated with actual server link later
-    alert('Server connection link coming soon!');
+    window.open('https://cfx.re/join/mavm3a', '_blank');
   };
 
   const exploreMenuItems = [
     { name: '3RD WORLD PD', url: '/pd' },
     { name: '3RD WORLD STATE TROOPERS', url: '/state-troopers' },
-    { name: '3RD WORLD EMS', url: '/ems' }
+    { name: '3RD WORLD EMS', url: '/ems' },
+    { name: '3RD WORLD DOJ', url: '/doj' }
   ];
 
   const handleExploreClick = (url) => {

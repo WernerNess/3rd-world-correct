@@ -17,7 +17,7 @@ const CommunitySection = () => {
             Connect with thousands of players, get support, and stay updated
           </p>
 
-          <button 
+          <button
             className="join-discord-btn"
             onClick={() => window.open('https://discord.gg/KGm8Nu9GuS', '_blank')}
           >
@@ -25,7 +25,7 @@ const CommunitySection = () => {
             <span>JOIN DISCORD</span>
           </button>
 
-          <p className="community-members">5,000+ members online now</p>
+
         </div>
       </div>
     </section>

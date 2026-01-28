@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, FileText, MessageSquare, Users, Activity, Settings, ChevronRight, X } from 'lucide-react';
+import { BookOpen, FileText, MessageSquare, Users, Activity, Settings, ChevronRight, X, Shield, Briefcase } from 'lucide-react';
 
 const QuickLinks = () => {
   const [showPureModeModal, setShowPureModeModal] = useState(false);
@@ -32,6 +32,18 @@ const QuickLinks = () => {
       action: () => navigate('/meet-the-team')
     },
     {
+      icon: Shield,
+      title: 'Faction Rules',
+      description: 'Guidelines for factions',
+      action: () => navigate('/faction-rules')
+    },
+    {
+      icon: Briefcase,
+      title: 'Business Rules',
+      description: 'regulations for businesses',
+      action: () => navigate('/business-rules')
+    },
+    {
       icon: Activity,
       title: 'Cfx.re Status',
       description: 'Check FiveM server status',
@@ -58,8 +70,8 @@ const QuickLinks = () => {
             {links.map((link, index) => {
               const Icon = link.icon;
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bubble-card"
                   onClick={link.action}
                 >
@@ -85,29 +97,29 @@ const QuickLinks = () => {
             <button className="modal-close" onClick={() => setShowPureModeModal(false)}>
               <X size={24} />
             </button>
-            
+
             <h2 className="modal-title">Pure Mode Bypass</h2>
-            
+
             <div className="modal-body">
               <p className="modal-description">
                 To bypass the Pure Mode launch dialog, follow these steps:
               </p>
-              
+
               <ol className="modal-steps">
                 <li>Right-click on your FiveM shortcut and click on "Properties"</li>
                 <li>In the "Target" field, add <code>-pure_1</code> after FiveM.exe</li>
                 <li>Ensure there is a space between FiveM.exe and -pure_1</li>
                 <li>Click "Apply" and then "OK"</li>
               </ol>
-              
+
               <div className="modal-note">
-                <strong>Note:</strong> You should start with Pure Mode already applied and ready after doing that. 
-                Be advised that connecting to non-Pure Mode servers will require a restart. 
+                <strong>Note:</strong> You should start with Pure Mode already applied and ready after doing that.
+                Be advised that connecting to non-Pure Mode servers will require a restart.
                 So you might want to make 2 different shortcuts of FiveM.
               </div>
-              
+
               <div className="modal-image">
-                <img 
+                <img
                   src="https://customer-assets.emergentagent.com/job_urban-gaming-zone/artifacts/u8w5q21x_image.png"
                   alt="Pure Mode Setup Example"
                   className="setup-example-image"
