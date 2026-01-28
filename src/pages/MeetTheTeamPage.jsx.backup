@@ -1,0 +1,78 @@
+import React from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const MeetTheTeamPage = () => {
+  const navigate = useNavigate();
+
+  const teamMembers = [
+    {
+      name: 'MALEEK REIGN',
+      role: 'OWNER',
+      motto: 'Leading the vision',
+      initials: 'MR'
+    },
+    {
+      name: 'WERNER NESS',
+      role: 'OWNER',
+      motto: 'Building the future',
+      initials: 'WN'
+    },
+    {
+      name: 'ZACHARY DELANE',
+      role: 'OWNER',
+      motto: 'Creating the experience',
+      initials: 'ZD'
+    },
+    {
+      name: 'ELIZABETH NESS',
+      role: 'OWNER',
+      motto: 'Driving excellence',
+      initials: 'EN'
+    },
+    {
+      name: 'CAT REIGN',
+      role: 'OWNER',
+      motto: 'Shaping the journey',
+      initials: 'CR'
+    }
+  ];
+
+  return (
+    <div className="team-page">
+      <div className="team-header">
+        <button className="back-button" onClick={() => navigate('/')}>
+          <ArrowLeft size={20} />
+          <span>Back to Home</span>
+        </button>
+        <h1 className="team-main-title">Meet The Team</h1>
+      </div>
+
+      <div className="team-grid-container">
+        {teamMembers.map((member, index) => (
+          <div
+            key={index}
+            className="team-member-card"
+          >
+            <div className="team-card-content">
+              <div className="team-member-info">
+                <div className="team-member-avatar">
+                  <span className="avatar-initials">{member.initials}</span>
+                </div>
+                <div className="team-member-details">
+                  <h3 className="team-member-name">{member.name}</h3>
+                  <span className="team-member-role">{member.role}</span>
+                </div>
+              </div>
+              <div className="team-member-motto">
+                <p>{member.motto}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MeetTheTeamPage;
