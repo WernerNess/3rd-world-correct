@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -22,8 +22,35 @@ import StateTroopersPage from './pages/StateTroopersPage';
 import DOJPage from './pages/DOJPage';
 
 function HomePage() {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const playAudio = async () => {
+      if (!audioRef.current) return;
+
+      try {
+        await audioRef.current.play();
+      } catch (err) {
+        console.log("Autoplay blocked, waiting for interaction");
+        const handleInteraction = () => {
+          if (audioRef.current) {
+            audioRef.current.play().catch(e => console.error("Play failed:", e));
+          }
+          document.removeEventListener('click', handleInteraction);
+          document.removeEventListener('keydown', handleInteraction);
+        };
+
+        document.addEventListener('click', handleInteraction);
+        document.addEventListener('keydown', handleInteraction);
+      }
+    };
+
+    playAudio();
+  }, []);
+
   return (
     <>
+      <audio ref={audioRef} src="/audio/final.wav" />
       <HeroSection />
       <WhyChooseUs />
       <QuickLinks />

@@ -36,7 +36,7 @@ const Footer = () => {
               className="footer-logo"
             />
             <p className="footer-tagline">
-              The ultimate FiveM roleplay experience. Welcome to the concrete jungle.
+              The ultimate FiveM roleplay experience. WELCOME TO A NEW WORLD
             </p>
           </div>
 

@@ -2313,7 +2313,7 @@ body {
 }
 
 .department-logo {
-  max-width: 400px;
+  max-width: 600px;
   width: 100%;
   height: auto;
   display: block;
@@ -2328,7 +2328,7 @@ body {
   }
 
   .department-logo {
-    max-width: 300px;
+    max-width: 450px;
   }
 }
 
